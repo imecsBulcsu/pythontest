@@ -23,7 +23,7 @@ jobs:
       - name: Extract version
         id: versionExtraction
         run: |
-          echo "*.py" | sed 's/.*\.\([0-9]+\.[0-9]+\)\..*/version=\1/p' 
+          ls *.py | sed 's/.*\.\([0-9]+\.[0-9]+\)\..*/version=\1/p' 
 
       # - name: log version
       #   run: echo ${{ steps.versionExtraction.outputs }}
