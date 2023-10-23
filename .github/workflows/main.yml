@@ -3,7 +3,7 @@ name: Daily Add-On Pipeline
 on: 
   push:
     tags:
-      - "v*.*.*"
+      - "*.*.*"
 
 defaults:
   run:
