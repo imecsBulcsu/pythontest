@@ -23,7 +23,7 @@ jobs:
       - name: Extract version
         id: versionExtraction
         run: |
-          ls *.py | sed -n 's/.*\.\([1-9][0-9]*\.[1-9][0-9]*\)\..*/version=\1/p' >> $GITHUB_OUTPUT
+          ls asd*.py | sed -n 's/.*\.\([1-9][0-9]*\.[1-9][0-9]*\)\..*/version=\1/p' >> $GITHUB_OUTPUT
 
       - name: log version
         run: echo ${{ steps.versionExtraction.outputs.version }}
