@@ -1,0 +1,21 @@
+name: Daily Add-On Pipeline
+
+on: push
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: list
+        run: ls .
+
+      - name: run python
+        run: python asd.py
+        
