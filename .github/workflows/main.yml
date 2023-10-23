@@ -23,10 +23,10 @@ jobs:
       - name: Extract version
         id: versionExtraction
         run: |
-          echo "*.py" | sed -n 's/.*\.\([0-9][0-9]*\.[0-9][0-9]*\)\..*/version=\1/p' >> $GITHUB_OUTPUT
+          echo "*.py" | sed -n 's/.*\.\([0-9]+\.[0-9]+\)\..*/version=\1/p' >> $GITHUB_OUTPUT
 
       - name: log version
-        run: cat ${{ steps.versionExtraction.outputs }}
+        run: echo ${{ steps.versionExtraction.outputs }}
 
       # - name: Bump version and push tag
       #   uses: anothrNick/github-tag-action@1.64.0 
