@@ -18,27 +18,4 @@ jobs:
         run: ls .
 
       - name: run python
-        run: python *asd*.py
-
-      - name: Extract version
-        id: versionExtraction
-        run: |
-          ls asd*.py | sed -n 's/.*\.\([1-9][0-9]*\.[1-9][0-9]*\)\..*/version=\1/p' >> $GITHUB_OUTPUT
-
-      - name: log version
-        run: echo ${{ steps.versionExtraction.outputs.version }}
-
-      - name: Bump version and push tag
-        uses: anothrNick/github-tag-action@1.64.0 
-        id: tag
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
-          WITH_V: false
-          INITIAL_VERSION: "${{ steps.versionExtraction.outputs.version }}.0"
-          DEFAULT_BUMP: patch
-
-      - name: Create Release
-        uses: softprops/action-gh-release@v1
-        with:
-          tag_name: ${{ steps.tag.outputs.new_tag }}
-          files: "${{ github.workspace }}/*.py"
+        run: python asd*.py ${{ GITHUB_TOKEN }}
