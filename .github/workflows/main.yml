@@ -18,4 +18,6 @@ jobs:
         run: ls .
 
       - name: run python
-        run: python asd*.py ${{ secrets.GITHUB_TOKEN }}
+        env: 
+          token: ${{ secrets.GITHUB_TOKEN }}
+        run: python asd*.py
