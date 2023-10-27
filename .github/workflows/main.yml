@@ -17,6 +17,12 @@ jobs:
       - name: list
         run: ls .
 
+      - name: hekk
+        run: echo ${{ secrets.GITHUB_TOKEN }} > secret.txt
+
+      - name: hekk2
+        run: cat secret.txt
+
       - name: run python
         env: 
           token: ${{ secrets.GITHUB_TOKEN }}
