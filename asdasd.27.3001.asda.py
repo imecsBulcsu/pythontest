@@ -1,4 +1,4 @@
-import sys
+import os
 
 print("asd444f")
-print(str(sys.argv))
+print(os.environ.get("token"))
