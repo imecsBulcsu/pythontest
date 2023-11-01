@@ -26,4 +26,4 @@ jobs:
       - name: run python
         env: 
           token: ${{ secrets.GITHUB_TOKEN }}
-        run: python asd*.py
+        run: python3 asd*.py
